@@ -1,10 +1,10 @@
 "use strict";
-const myPromise = new Promise((resolve, reject) => {
+const myPromise3 = new Promise((resole, reject) => {
     setTimeout(() => {
-        resolve("Hello Async");
-    }, 2000);
+        reject(new Error("Something went wrong"));
+    }, 1000);
 });
-myPromise
+myPromise3
     .then(message => {
     console.log(message);
 })
