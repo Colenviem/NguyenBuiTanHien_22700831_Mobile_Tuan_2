@@ -4,7 +4,6 @@ type User2 = {
     name: string;
 };
 
-// Hàm fetchUser giả lập API (cho delay tùy chỉnh)
 const fetchUser2 = (id: number, delay = 1000): Promise<User> => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -13,7 +12,6 @@ const fetchUser2 = (id: number, delay = 1000): Promise<User> => {
   });
 };
 
-// Hàm fetchUserWithTimeout (timeout = 2 giây)
 const fetchUserWithTimeout = (id: number, delay = 1000): Promise<User> => {
   return Promise.race([
     fetchUser2(id, delay), 
@@ -23,11 +21,10 @@ const fetchUserWithTimeout = (id: number, delay = 1000): Promise<User> => {
   ]);
 };
 
-// Test thử
 const run20 = async () => {
   try {
     console.log("Fetching user...");
-    const user = await fetchUserWithTimeout(1, 3000); // API mất 3s => timeout
+    const user = await fetchUserWithTimeout(1, 3000); 
     console.log("User received:", user);
   } catch (error) {
     console.error("Error:", error);
