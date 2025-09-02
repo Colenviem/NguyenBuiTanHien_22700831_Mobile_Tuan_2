@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "lib": ["es2020", "dom"], /* Thư viện chuẩn được sử dụng trong quá trình biên dịch */
     "target": "es2018", /* Chỉ định phiên bản JavaScript mà TypeScript sẽ biên dịch ra */
     "module": "commonjs", /* Sử dụng module CommonJS */
     "strict": true, /* Bật kiểm tra strict */
